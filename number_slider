@@ -1,0 +1,20 @@
+// quick and dirty slider control
+// adds commas after three zeros
+// WARNING: does not add commas for values above 999,999.
+// How to use:
+//     Add the effect `slider control` to your text layer.
+//     On your text layer, alt click the source text parameter and copy this code in
+//     It should reflect the value of the slider control.
+
+
+var num = Math.floor(effect("Slider Control")("Slider"));
+strNum = num.toString();
+if (strNum.length > 3){
+    var head = strNum.substring(0,strNum.length-3);
+    var tail = strNum.substring(strNum.length-3);
+    var output = head+","+tail;
+}
+else {
+   var output = strNum;
+}
+output
